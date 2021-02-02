@@ -1,0 +1,17 @@
+name: Delete aurora and redis stack
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete feature-branch-infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cdk destroy --all
+        uses: youyo/aws-cdk-github-actions@v2
+        with:
+          cdk_subcommand: 'destroy'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'us-east-2'
