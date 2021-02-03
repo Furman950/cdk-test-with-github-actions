@@ -3,6 +3,6 @@ exports.handler = async function(event) {
     return {
       statusCode: 200,
       headers: { "Content-Type": "text/plain" },
-      body: `Change1\n`
+      body: `How cool is this bruh????\n`
     };
   };
