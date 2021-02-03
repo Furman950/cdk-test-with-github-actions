@@ -14,7 +14,7 @@ jobs:
         with:
           cdk_subcommand: 'destroy'
           working_dir: 'deployment'
-          cdk_args: '--require-approval never'
+          cdk_args: '--force'
           actions_comment: true
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
