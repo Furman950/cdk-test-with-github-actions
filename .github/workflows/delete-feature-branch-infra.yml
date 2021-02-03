@@ -4,7 +4,7 @@ on:
     types: [closed]
 
 jobs:
-  delete feature-branch-infra:
+  delete-feature-branch-infra:
     runs-on: ubuntu-latest
     steps:
       - name: cdk destroy --all
